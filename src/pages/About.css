@@ -1,0 +1,668 @@
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Story Teaser Module Styles
+   ========================================================================== */
+.story-teaserSection {
+  padding: 90px 100px 40px 100px;
+  background-color: #ffffff;
+}
+
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-teaserGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-top: 50px;
+}
+
+.story-gridBlock {
+  display: block;
+  width: 100%;
+}
+
+.story-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 14px;
+}
+
+.story-heading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.5vw, 38px);
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.25;
+}
+
+.story-teaserText {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #555555;
+  margin-bottom: 24px;
+}
+
+.story-toggleBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: #997124;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.story-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.story-arrow.up {
+  transform: rotate(180deg);
+}
+
+.story-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e8e4dc;
+  margin: 50px 0;
+}
+
+/* ==========================================================================
+   Layered Content Layout (Intriguing Story Interface)
+   ========================================================================== */
+.story-layeredGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 40px;
+}
+
+.story-layerRow {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  gap: 40px;
+  align-items: flex-start;
+  border-bottom: 1px solid #edebe6;
+  padding-bottom: 32px;
+}
+
+.story-layerRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.layer-label {
+  font-family: var(--font-display), serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent-color, #997124);
+  letter-spacing: -0.01em;
+  margin-top: 2px;
+}
+
+.layer-text p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #3a3a38;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.layer-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-highlightText {
+  font-weight: 600;
+  font-size: 16.5px !important;
+  color: #1a1a1a !important;
+  border-left: 3px solid var(--accent-color, #997124);
+  padding-left: 20px;
+  margin-top: 28px !important;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Mission & Vision Layout
+   ========================================================================== */
+.mission-missionSection {
+  padding: 100px 100px;
+  background: transparent;
+}
+
+.mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-missionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mission-gridWrapper {
+  display: block;
+  width: 100%;
+}
+
+.mission-missionCard {
+  background: white;
+  padding: 44px 40px;
+  border: 1px solid #e8e4dc;
+  border-radius: 2px;
+  height: 250px;
+  box-sizing: border-box;
+}
+
+.mission-cardLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 16px;
+}
+
+.mission-cardText {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a1a1a;
+}
+
+/* ==========================================================================
+   Values Module Styles
+   ========================================================================== */
+.value-valuesSection {
+  padding: 80px 100px;
+  background: white;
+}
+
+.value-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 14px;
+}
+
+.value-sectionHeading {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 52px;
+  line-height: 1.2;
+}
+
+.value-valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.value-gridWrapper {
+  display: block;
+  width: 100%;
+}
+
+.value-valueCard {
+  padding: 32px 0;
+  border-top: 2px solid #e8e4dc;
+  transition: border-color 0.3s;
+}
+
+.value-valueCard:hover {
+  border-color: var(--accent-color);
+}
+
+.value-valueNum {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(153, 113, 36, 0.25);
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.value-valueLabel {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 12px;
+}
+
+.value-valueDesc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #555555;
+}
+
+/* ==========================================================================
+   Expertise Capabilities Section
+   ========================================================================== */
+.expertise-section {
+  padding: 90px 100px;
+  background-color: #ffffff;
+  border-top: 1px solid #e8e4dc;
+}
+
+.expertise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.expertise-splitLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+}
+
+.expertise-splitColumn {
+  display: block;
+  width: 100%;
+}
+
+.expertise-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 14px;
+}
+
+.expertise-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.expertise-desc {
+  font-size: 15px;
+  color: #666666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #222222;
+}
+
+.expertise-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #997124;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.props-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prop-card {
+  background: #f8f6f2;
+  padding: 24px;
+  border-left: 3px solid #997124;
+}
+
+.prop-card h5 {
+  font-size: 13px;
+  color: #997124;
+  margin-bottom: 6px;
+}
+
+.prop-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* ==========================================================================
+   Partners Ecosystem
+   ========================================================================== */
+.partners-section {
+  padding: 90px 100px;
+  background-color: #f8f6f2;
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partners-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 14px;
+}
+
+.partners-heading {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.partners-subtitle {
+  max-width: 600px;
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.partners-gridWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.partners-gridWrapper > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.partner-card {
+  background: #ffffff;
+  padding: 30px 24px;
+  border: 1px solid #e8e4dc;
+  border-radius: 2px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.partner-card h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #997124;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.partner-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* ==========================================================================
+   Team Section Modules
+   ========================================================================== */
+.team-teamSection {
+  padding: 80px 100px;
+  background: white;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 14px;
+}
+
+.team-sectionHeading {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 52px;
+  line-height: 1.2;
+}
+
+.team-teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-gridItemWrapper {
+  display: block;
+  width: 100%;
+}
+
+.team-teamCard {
+  background: white;
+  border: 1px solid #e8e4dc;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.team-teamImgWrap {
+  height: 280px;
+  overflow: hidden;
+}
+
+.team-teamImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.team-teamCard:hover .team-teamImg {
+  transform: scale(1.04);
+}
+
+.team-teamInfo {
+  padding: 20px 22px;
+}
+
+.team-teamName {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.team-teamRole {
+  font-size: 12px;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Commitment Block
+   ========================================================================== */
+.commitment-section {
+  padding: 100px 100px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+}
+
+.commitment-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.commitment-section h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.commitment-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN: TABLET & LAPTOP REFLOW
+   ========================================== */
+@media screen and (max-width: 1024px) {
+  .story-teaserSection,
+  .mission-missionSection,
+  .value-valuesSection,
+  .expertise-section,
+  .partners-section,
+  .team-teamSection,
+  .commitment-section {
+    padding: 80px 40px;
+  }
+
+  .story-teaserGrid,
+  .expertise-splitLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Reflow story layer layout into a cleaner stacked format on small screens */
+  .story-layerRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  .value-valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .partners-grid,
+  .team-teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN: MOBILE VIEWPORT METRICS
+   ========================================== */
+@media screen and (max-width: 640px) {
+  .story-teaserSection,
+  .mission-missionSection,
+  .value-valuesSection,
+  .expertise-section,
+  .partners-section,
+  .team-teamSection,
+  .commitment-section {
+    padding: 60px 20px;
+  }
+
+  .about-bg {
+    height: auto;
+    min-height: 70vh;
+    padding: 40px 0;
+  }
+
+  .mission-missionGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mission-missionCard {
+    height: auto;
+    padding: 32px 24px;
+  }
+
+  .value-valuesGrid,
+  .partners-grid,
+  .team-teamGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .value-valueCard {
+    padding: 20px 0;
+  }
+
+  .partner-card {
+    padding: 24px 20px;
+  }
+
+  .team-teamImgWrap {
+    height: 320px;
+  }
+
+  .partners-subtitle,
+  .value-sectionHeading,
+  .team-sectionHeading {
+    margin-bottom: 32px;
+  }
+
+  .commitment-section h2 {
+    font-size: 26px;
+  }
+}

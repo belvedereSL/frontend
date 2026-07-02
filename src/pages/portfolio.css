@@ -1,0 +1,627 @@
+/* ==========================================================================
+   CORE LAYOUT MECHANICS
+   ========================================================================== */
+:root {
+  --bvd-dark: #111111;
+  --bvd-muted: #666666;
+  --bvd-border: #eae6df;
+  --bvd-tint-bg: #fcfbfa;
+  --bvd-gold: var(--accent-color, #c5a880);
+}
+
+.port-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: -1;
+}
+
+.portfolio-layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.portfolio-layout-section {
+  padding: 110px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-white {
+  background-color: #ffffff;
+}
+.section-neutral {
+  background-color: transparent;
+}
+.section-dark {
+  background-color: #161514;
+}
+
+.portfolio-block-header {
+  margin-bottom: 56px;
+  max-width: 750px;
+}
+.portfolio-block-header.center-align {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.portfolio-section-heading {
+  font-family: var(--font-display, serif);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--accent-color);
+  margin: 0 0 12px 0;
+}
+.portfolio-section-heading.color-white {
+  color: #ffffff !important;
+}
+.portfolio-section-subheading {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.portfolio-section-subheading2 {
+  font-size: 15px;
+  color: black;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Filter System Controls */
+.filter-system-wrapper {
+  margin-bottom: 54px;
+  border-bottom: 1px solid var(--bvd-border);
+  padding-bottom: 28px;
+}
+.filter-mode-toggle-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.mode-toggle-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bvd-muted);
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.mode-toggle-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bvd-gold);
+  transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mode-toggle-btn.is-mode-active {
+  color: var(--bvd-dark);
+}
+.mode-toggle-btn.is-mode-active::after {
+  width: 100%;
+}
+.clear-all-filter-trigger {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ba3c3c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+.filter-pane-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.portfolio-filter-pill {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 40px;
+  border: 1px solid var(--bvd-border);
+  background: #ffffff;
+  color: var(--bvd-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.portfolio-filter-pill:hover {
+  border-color: var(--bvd-gold);
+  color: var(--bvd-gold);
+}
+.portfolio-filter-pill.is-pill-active {
+  background-color: var(--bvd-gold);
+  border-color: var(--bvd-gold);
+  color: #ffffff !important;
+}
+
+/* Empty Layout State */
+.portfolio-empty-state {
+  text-align: center;
+  padding: 70px 24px;
+  border: 1px dashed var(--bvd-border);
+  border-radius: 4px;
+}
+.portfolio-empty-state p {
+  color: var(--bvd-muted);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.reset-state-inline-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--bvd-dark);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   CARDS TILES (Year pinned strictly to right edge)
+   ========================================================================== */
+.portfolio-text-only-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.portfolio-text-card-node.elevated-design {
+  background-color: #ffffff;
+  border: 1px solid var(--bvd-border);
+  border-radius: 4px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-accent-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--bvd-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portfolio-text-card-node.elevated-design:hover {
+  transform: translateY(-6px);
+  border-color: #d1cbdc;
+  box-shadow: 0 24px 48px rgba(27, 25, 22, 0.05);
+}
+.portfolio-text-card-node.elevated-design:hover .card-accent-ribbon {
+  transform: scaleX(1);
+}
+.card-node-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.card-node-sector-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bvd-gold);
+  background-color: #faf7f2;
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+.card-node-year-pill.alignment-right {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bvd-dark);
+  background: var(--bvd-tint-bg);
+  border: 1px solid var(--bvd-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-left: auto; /* Pinned directly to the right edge */
+}
+.portfolio-text-card-node.elevated-design .card-node-main-title {
+  font-family: var(--font-display, serif);
+  font-size: 15px;
+  font-weight: 350;
+  line-height: 1.5;
+  color: var(--bvd-dark);
+  margin: 28px 0;
+  flex-grow: 1;
+}
+.portfolio-text-card-node.elevated-design .card-node-footer {
+  border-top: 1px solid #f2eee8;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.portfolio-text-card-node.elevated-design .footer-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a0988e;
+  font-weight: 500;
+}
+.portfolio-text-card-node.elevated-design .footer-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bvd-dark);
+}
+
+/* ==========================================================================
+   WORLD BANK METRICS MODIFIERS (Gold Color Preserved, Weight Reduced)
+   ========================================================================== */
+.portfolio-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.portfolio-metric-card {
+  background-color: #ffffff;
+  border-top: 2px solid var(--bvd-gold);
+  padding: 32px;
+  box-sizing: border-box;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  to {
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.4);
+  }
+}
+.metric-large-display.thin-gold-weight {
+  font-size: 38px;
+  font-weight: 300 !important; /* Elegant refined light profile */
+  color: var(--bvd-gold) !important; /* Retained exact gold profile */
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.metric-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--bvd-dark);
+  margin: 0 0 8px 0;
+}
+.metric-subtitle {
+  font-size: 12px;
+  color: var(--bvd-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTORAL EXPERIENCE MATRIX (Premium List Styles & Original Data)
+   ========================================================================== */
+.portfolio-experience-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.experience-matrix-card {
+  background: #ffffff;
+  border: 1px solid var(--bvd-border);
+  padding: 36px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.experience-card-title {
+  font-family: var(--font-display, serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--bvd-dark);
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bvd-border);
+}
+.experience-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.experience-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.gold-geometric-bullet {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--bvd-gold);
+  transform: rotate(45deg); /* Modern diamond profile indicator */
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.bullet-text-node {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--bvd-muted);
+}
+
+/* ==========================================================================
+   CHIPS & CTAS
+   ========================================================================== */
+.portfolio-chips-flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.portfolio-partner-chip-node {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 2px;
+}
+.portfolio-cta-strip-block {
+  padding: 80px 0;
+  background-color: var(--bvd-tint-bg);
+}
+.portfolio-cta-inner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 48px;
+  background-color: #ffffff;
+  border: 1px solid var(--bvd-border);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.portfolio-cta-heading {
+  font-family: var(--font-display, serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--bvd-dark);
+  margin: 0 0 6px 0;
+}
+.portfolio-cta-paragraph {
+  font-size: 15px;
+  color: var(--bvd-muted);
+  margin: 0;
+}
+.portfolio-cta-action-button {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--bvd-dark);
+  padding: 16px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+.portfolio-cta-action-button:hover {
+  background-color: var(--bvd-gold);
+}
+
+/* Custom dynamic structure when an image is assigned */
+.portfolio-text-card-node.has-image {
+  display: flex;
+  flex-direction: row;
+  padding: 0; /* Clear default padding to prevent text-alignment spacing issues */
+  overflow: hidden;
+  gap: 0;
+}
+
+/* Left image panel */
+.card-node-image-side {
+  flex: 0 0 35%; /* Gives the image column a solid proportion */
+  min-width: 240px;
+  max-height: 100%;
+  position: relative;
+}
+
+.card-side-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right text section */
+.portfolio-text-card-node.has-image .card-node-text-side {
+  flex: 1;
+  padding: 2.5rem; /* Re-apply internal padding comfortably for content layout side */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Description style configuration if you want summary text under titles */
+.card-node-desc-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0.75rem 0 1.5rem 0;
+}
+
+/* ==========================================================================
+   Portfolio Mobile Responsiveness (768px & Below)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Core Layout Adjustments */
+  .portfolio-layout-container {
+    padding: 0 20px; /* Compress horizontal padding to maximize screen width */
+  }
+
+  .portfolio-layout-section {
+    padding: 60px 0; /* Soften the dramatic desktop vertical section breaks */
+  }
+
+  .portfolio-block-header {
+    margin-bottom: 36px;
+  }
+
+  .portfolio-section-heading {
+    font-size: 26px; /* Balance sizing so headings don't wrap tightly */
+  }
+
+  /* Hero Section */
+  .port-bg {
+    height: 70vh;
+  }
+
+  /* Filter Systems Tuning */
+  .filter-system-wrapper {
+    margin-bottom: 36px;
+    padding-bottom: 16px;
+  }
+
+  .filter-mode-toggle-bar {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .filter-pane-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Enable thumb-swipe scrolling for granular filters */
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-filter-pill {
+    white-space: nowrap; /* Block mid-word line-wrapping inside active pills */
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+
+  .clear-all-filter-trigger {
+    margin-left: 0; /* Align with stacked structure */
+    width: 100%;
+    text-align: left;
+    padding-top: 4px;
+  }
+
+  /* 2. Portfolio Project Cards Stack */
+  .portfolio-text-only-grid {
+    grid-template-columns: 1fr; /* Switch from 2 columns to a stacked block */
+    gap: 24px;
+  }
+
+  .portfolio-text-card-node.elevated-design {
+    padding: 24px; /* Lower bulky inner card spacing */
+  }
+
+  /* Image-Inclusive Card Modifiers */
+  .portfolio-text-card-node.has-image {
+    flex-direction: column; /* Transform side-by-side splits into a vertical stack */
+  }
+
+  .card-node-image-side {
+    flex: none;
+    width: 100%;
+    height: 200px; /* Lock height profile on phone layouts */
+  }
+
+  .portfolio-text-card-node.has-image .card-node-text-side {
+    padding: 24px; /* Match standardized text-only node metrics */
+  }
+
+  .portfolio-text-card-node.elevated-design .card-node-main-title {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+
+  /* 3. World Bank Metrics Grid Stack */
+  .portfolio-metrics-grid {
+    grid-template-columns: 1fr; /* Drop from 3 columns to 1 flat column */
+    gap: 16px;
+  }
+
+  .portfolio-metric-card {
+    padding: 24px;
+  }
+
+  .metric-large-display.thin-gold-weight {
+    font-size: 32px;
+    margin-bottom: 6px;
+  }
+
+  /* 4. Sectoral Experience Grid Stack */
+  .portfolio-experience-matrix-grid {
+    grid-template-columns: 1fr; /* Drop down from 2 columns */
+    gap: 20px;
+  }
+
+  .experience-matrix-card {
+    padding: 24px;
+  }
+
+  /* 5. Key Partners Alignment */
+  .portfolio-chips-flex-row {
+    justify-content: flex-start; /* Left align chips for better tracking on small screens */
+    gap: 8px;
+  }
+
+  .portfolio-partner-chip-node {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* 6. Call To Action Framework */
+  .portfolio-cta-strip-block {
+    padding: 40px 0;
+  }
+
+  .portfolio-cta-inner-card {
+    flex-direction: column; /* Stack details above action click trigger */
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .portfolio-cta-heading {
+    font-size: 22px;
+  }
+
+  .portfolio-cta-action-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

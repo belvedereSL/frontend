@@ -1,0 +1,467 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #997124;
+  --section-breaks: #f5f3ef;
+  --font-family: "Zilla Slab", serif;
+}
+
+/* Core Transparent Default Navbar state */
+.navbar {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Transformed Scroll Navbar Configuration state */
+.navbar.is-scrolled {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--section-breaks);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.nav-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Logo img {
+  height: 85px; /* Scaled cleanly within the 100px container */
+  width: auto;
+}
+
+.nav-elements {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  list-style: none;
+}
+
+/* Link transitions dealing with transparent background states */
+.nav-elements .nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85); /* Clean white tracking links initially */
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar.is-scrolled .nav-elements .nav-links a {
+  color: var(--text-color); /* Turns charcoal when scrolled */
+}
+
+/* Active navigation tracking state variables */
+.nav-links a.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar.is-scrolled .nav-links a.active {
+  color: var(--text-color) !important;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+}
+
+.cta {
+  padding: 8px 16px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navbar.is-scrolled .cta {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color) !important;
+}
+
+.cta:hover {
+  background: white;
+  color: #000000 !important;
+}
+
+.navbar.is-scrolled .cta:hover {
+  background: var(--accent-color);
+  color: var(--background-color) !important;
+}
+
+/* --- Mobile Menu Styles & Hamburger Overrides --- */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-burgerLineTop,
+.nav-burgerLineMid,
+.nav-burgerLineBot,
+.nav-burgerLineTopOpen,
+.nav-burgerLineMidOpen,
+.nav-burgerLineBotOpen {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff; /* White burger menu on transparent background */
+  transition:
+    transform 0.3s,
+    opacity 0.3s,
+    background-color 0.3s;
+}
+
+.navbar.is-scrolled .nav-burgerLineTop,
+.navbar.is-scrolled .nav-burgerLineMid,
+.navbar.is-scrolled .nav-burgerLineBot {
+  background: var(--text-color);
+}
+
+.nav-burgerLineTopOpen,
+.nav-burgerLineMidOpen,
+.nav-burgerLineBotOpen {
+  background: var(
+    --text-color
+  ) !important; /* Force legible color when panel drops down */
+}
+
+.nav-burgerLineTopOpen {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-burgerLineMidOpen {
+  opacity: 0;
+}
+.nav-burgerLineBotOpen {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-mobileMenu {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #997124;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-mobileLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: left;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0e6d2;
+  display: block;
+  text-decoration: none;
+}
+
+.nav-mobileLinkActive {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.nav-mobilecta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-mobilecta {
+  text-decoration: none;
+  padding: 8px 16px;
+  text-align: center;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color) !important;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+/* --- Responsive Media Query --- */
+@media (max-width: 900px) {
+  .nav-links,
+  .cta-btn {
+    display: none;
+  }
+  .nav-burger {
+    display: flex;
+  }
+  .nav-container {
+    padding: 0 30px;
+  }
+}
+/* .bg {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/About Bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+} */
+
+.bg {
+  height: 85vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 80px 0px 0px 80px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.content-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.eyebrowLine {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.headline h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.1;
+  color: white;
+  letter-spacing: -0.01em;
+  font-size: 70px;
+  margin: 0 0 10px 0;
+}
+
+.sub {
+  max-width: 520px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+}
+/* ==========================================================================
+   Content Hero Responsiveness (768px & Below)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .overlay {
+    height: 85vh;
+  }
+  .content {
+    /* Remove large left offset and add balanced side padding */
+    padding: 60px 24px 0 24px;
+    max-width: 100%;
+  }
+
+  .content-eyebrow {
+    margin-bottom: 20px;
+    gap: 10px;
+    font-size: 10px; /* Slight scale down for better balance */
+  }
+
+  .eyebrowLine {
+    width: 40px; /* Shorten the decorative line slightly */
+  }
+
+  .headline h1 {
+    /* Scale down font size dynamically so it doesn't break abruptly */
+    font-size: clamp(36px, 8vw, 48px);
+    line-height: 1.2; /* Loosen up the tracking slightly for readability */
+    letter-spacing: normal;
+  }
+
+  .sub {
+    max-width: 100%; /* Allow description to use full available width */
+    font-size: 16px; /* Optimized body reading size for smaller viewports */
+    line-height: 1.6;
+    margin-top: 18px;
+  }
+}
+
+/* {Footer} */
+
+.footer-footer {
+  background: #1a1a1a;
+  padding: 64px 0 0;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 100px;
+}
+.footer-top {
+  /* Restored completely back to your original 4 column configuration */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.footer-brand {
+  padding-right: 32px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 240px;
+  margin-bottom: 10px;
+}
+.footer-reg {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+}
+.footer-linksGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-groupLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+.footer-link {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: white;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+}
+.footer-flag {
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .footer-inner {
+    padding: 0 24px;
+  }
+  /* Fixed your component wrapper targeting reference from '.top' to '.footer-top' */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,576 @@
+/* ==========================================================================
+   HERO VIDEO OVERRIDES & PARALAX DESIGN
+   ========================================================================== */
+.home-bg {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.home-video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: -1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 80px 0px 80px;
+}
+
+.home-content-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-color, #997124);
+  margin-bottom: 20px;
+}
+
+.home-eyebrowLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-color, #997124);
+}
+
+.home-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-headline h1 {
+  font-family: var(--font-family), serif;
+  font-weight: 300;
+  line-height: 1.15;
+  color: white;
+  letter-spacing: -0.02em;
+  font-size: clamp(38px, 5vw, 68px);
+  max-width: 900px;
+  margin: 0;
+}
+
+.home-headline h2 {
+  font-family: var(--font-family), serif;
+  font-weight: 200;
+  line-height: 1.15;
+  color: white;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4w, 58px);
+  max-width: 900px;
+  margin: 0;
+}
+
+.home-sub {
+  max-width: 620px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0px;
+}
+
+.home-content-btn {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.home-content-cta1 {
+  background-color: #997124;
+  color: white;
+  padding: 16px 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 15px rgba(153, 113, 36, 0.2);
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(153, 113, 36, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 20px rgba(153, 113, 36, 0.4),
+      0 0 40px rgba(153, 113, 36, 0.6);
+  }
+}
+
+.home-content-cta1:hover {
+  background-color: #b58934;
+}
+
+.home-content-cta2 {
+  color: white;
+  padding: 16px 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.home-content-cta2:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll Down Indicator */
+.home-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-text {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-dot {
+  width: 100%;
+  height: 20px;
+  background: var(--accent-color, #997124);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  animation: scrollDownLoop 2.2s infinite cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes scrollDownLoop {
+  0% {
+    top: -20px;
+    height: 0px;
+  }
+  30% {
+    top: 0px;
+    height: 20px;
+  }
+  60% {
+    top: 50px;
+    height: 0px;
+  }
+  100% {
+    top: 50px;
+    height: 0px;
+  }
+}
+
+/* ==========================================================================
+   UNIQUE ASYMMETRIC EDITORIAL NARRATIVE: STORY SECTION
+   ========================================================================== */
+.home-story-section {
+  background: #fcfbfa;
+  padding: 120px 0;
+  border-bottom: 1px solid #edebe6;
+}
+
+.story-editorial-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.story-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #997124;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.story-display-title {
+  font-family: var(--font-family), serif;
+  font-size: clamp(32px, 3.2vw, 46px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.story-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #706e68;
+}
+
+.story-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-lead-text {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #2b2a27;
+  margin: 0;
+}
+
+.story-body-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5c5a54;
+  margin: 0;
+}
+
+.story-readmore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 4px;
+  transition: gap 0.3s ease;
+}
+
+.story-readmore-link:hover {
+  gap: 20px;
+}
+
+/* ==========================================================================
+   IMPACT GRID SECTION 
+   ========================================================================== */
+.impact-inner {
+  margin: 0 auto;
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.impact-eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-color, #997124);
+  margin-bottom: 16px;
+}
+
+.impact-heading {
+  font-family: var(--font-family), serif;
+  font-size: clamp(34px, 3.5vw, 50px);
+  font-weight: 300;
+  color: white;
+  margin-bottom: 64px;
+  line-height: 1.2;
+}
+
+.impact-heading em {
+  font-style: italic;
+  color: #8c8980;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.impact-card {
+  background: #111111;
+  padding: 48px 36px;
+  transition: background 0.4s ease;
+}
+
+.impact-card:hover {
+  background: #181818;
+}
+
+.impact-num {
+  font-family: var(--font-family), serif;
+  font-size: clamp(40px, 4vw, 68px);
+  font-weight: 400;
+  color: var(--accent-color, #997124);
+  line-height: 1;
+}
+
+.impact-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(153, 113, 36, 0.4);
+  margin: 20px 0;
+}
+
+.impact-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.impact-desc {
+  font-size: 13px;
+  color: #a6a39a;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   MINIMALIST PREMIUM INTERLINKED PROGRAMS SECTION
+   ========================================================================== */
+.program-programs {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.program-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.program-header {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 60px;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+
+.program-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-color, #997124);
+  margin-bottom: 16px;
+}
+
+.program-heading {
+  font-family: var(--font-family), serif;
+  font-size: clamp(34px, 3.5vw, 50px);
+  font-weight: 300;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.program-heading em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.program-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #66645d;
+  margin: 0;
+}
+
+/* Strip Grid Custom Layout */
+.premium-program-strip-grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #edebe6;
+}
+
+.program-strip-card {
+  border-bottom: 1px solid #edebe6;
+  position: relative;
+  transition: background-color 0.35s ease;
+}
+
+.program-strip-link {
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr;
+  align-items: center;
+  padding: 32px 16px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: all 0.35s ease;
+}
+
+.strip-index {
+  font-size: 13px;
+  font-weight: 600;
+  color: #a6a39a;
+  font-family: monospace;
+}
+
+.strip-title {
+  font-family: var(--font-family), serif;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  margin: 0;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.strip-arrow {
+  display: flex;
+  justify-content: flex-end;
+  color: #c4c1ba;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+/* Strip Interactive Hover Effects */
+.program-strip-card:hover {
+  background-color: #faf9f6;
+}
+
+.program-strip-card:hover .strip-title {
+  color: #997124;
+  transform: translateX(12px);
+}
+
+.program-strip-card:hover .strip-arrow {
+  color: #997124;
+  transform: scale(1.15) translate(-4px, 4px);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT RESPONSIVENESS CAPABILITIES
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .home-content,
+  .story-editorial-container,
+  .impact-inner,
+  .program-inner {
+    padding: 80px 40px;
+  }
+
+  .story-split-grid,
+  .program-header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .program-strip-link {
+    grid-template-columns: 1fr 8fr 1fr;
+    padding: 28px 8px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-content,
+  .impact-inner {
+    padding: 60px 24px;
+  }
+
+  .story-editorial-container {
+    padding: 0px 24px;
+  }
+
+  .program-inner {
+    padding: 0px 24px;
+  }
+
+  .home-content {
+    padding-top: 20px;
+  }
+
+  .home-content-btn {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .home-headline h1 {
+    font-size: 30px;
+  }
+
+  .home-headline p {
+    font-size: 16px;
+  }
+  .home-content-cta1,
+  .home-content-cta2 {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card {
+    padding: 36px 24px;
+  }
+
+  .program-strip-link {
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+  }
+
+  .program-strip-card:hover .strip-title {
+    transform: translateX(4px);
+  }
+}
