@@ -186,9 +186,9 @@ const ServicesDetail = () => {
       <div className="detail-premium-container">
         <div className="detail-layout-split">
           <main className="detail-primary-column">
-            <div className="yerinotes-logo-container">
-              <img src={Logo} alt="" />
-            </div>
+            
+              <img src={Logo} alt="" className="yerinotes-logo" />
+            
 
             <section className="detail-content-section">
               <h2 className="detail-section-headline">{service.headline}</h2>

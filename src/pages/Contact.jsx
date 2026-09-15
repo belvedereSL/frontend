@@ -158,17 +158,17 @@ const Contact = () => {
                   {[
                     {
                       label: "Email",
-                      val: "hello@belvedereSL.org",
-                      href: "mailto:hello@belvedereSL.org",
+                      val: "info@belvedere.com",
+                      href: "mailto:info@belvedere.com",
                     },
                     {
                       label: "Phone",
-                      val: "+232 76 000 000",
-                      href: "tel:+23276000000",
+                      val: "+232 33 24 96 43",
+                      href: "tel:+23233249643",
                     },
                     {
                       label: "Address",
-                      val: "14 Wilberforce Street, Freetown, Sierra Leone",
+                      val: "2 James Drive, Imat, Freetown, Sierra Leone",
                       href: null,
                     },
                     {

@@ -234,8 +234,13 @@
   width: 100%;
 }
 
-.yerinotes-logo-container {
+/* .yerinotes-logo-container {
   height: 100%;
+} */
+
+.yerinotes-logo{
+  max-height: 200px;
+  width: 80%;
 }
 
 .yerinotes-logo-container img {
