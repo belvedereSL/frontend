@@ -88,7 +88,7 @@ const PARTNERS = [
   "African Development Bank (AfDB)",
   "Islamic Development Bank (IsDB)",
   "European Union (EU)",
-  "United Nations Industrial Development Organization (UNIDO)",
+  "United Nations Industrial Development Organisation (UNIDO)",
   "World Food Programme (WFP)",
   "UNICEF",
   "Global Panel on Agriculture and Food Systems for Nutrition (GLOPAN)",
@@ -271,7 +271,7 @@ const Portfolio = () => {
               transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
             >
               Discover how our expertise has supported governments,
-              international organizations, and private-sector partners in
+              international organisations, and private-sector partners in
               delivering successful projects that strengthen institutions and
               transform communities.
             </motion.p>
@@ -448,7 +448,7 @@ const Portfolio = () => {
 
                       <div className="card-node-footer">
                         <span className="footer-label">
-                          Client/Partner Organization
+                          Client/Partner Organisation
                         </span>
                         <span className="footer-value">{p.client}</span>
                       </div>

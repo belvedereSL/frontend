@@ -93,7 +93,7 @@ const YeriNotes = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="user_org">Organization / Affiliation</label>
+          <label htmlFor="user_org">Organisation / Affiliation</label>
           <input
             type="text"
             id="user_org"

@@ -15,7 +15,7 @@ const stats = [
   {
     num: 30,
     suffix: "+",
-    label: "Projects Succefully Delivered",
+    label: "Projects Successfully Delivered",
     desc: "Across 14 districts of Sierra Leone",
   },
   {
@@ -28,14 +28,14 @@ const stats = [
   {
     num: 16,
     suffix: "+",
-    label: "International & Goverment Partners",
+    label: "International & Government Partners",
     desc: "Participants completing full programs",
   },
   {
     num: 6,
     suffix: "years",
     label: "Proven Develpment Impact (2019-2025)",
-    desc: "Local organizations and leaders",
+    desc: "Local organisations and leaders",
   },
 ];
 
@@ -166,7 +166,7 @@ const Home = () => {
                 As an agile, multidisciplinary, and results-oriented company, we
                 provide high-quality consultancy, research, project management,
                 and advisory services to governments, development partners,
-                multilateral institutions, non-governmental organizations,
+                multilateral institutions, non-governmental organisations,
                 corporations, and private sector investors across Sierra Leone
                 and the wider West African region.
               </p>

@@ -32,8 +32,8 @@ const faqs = [
     a: "We are funded through a mix of individual donors, grants, and institutional partnerships. Our annual report includes full financial transparency.",
   },
   {
-    q: "Can organizations partner with you on programs?",
-    a: "Absolutely. We actively seek partnerships with organizations whose values align with ours. Reach out to start a conversation.",
+    q: "Can organisations partner with you on programs?",
+    a: "Absolutely. We actively seek partnerships with organisations whose values align with ours. Reach out to start a conversation.",
   },
 ];
 
@@ -168,7 +168,7 @@ const Contact = () => {
                     },
                     {
                       label: "Address",
-                      val: "2 James Drive, Imat, Freetown, Sierra Leone",
+                      val: "2 James Drive, IMATT, Freetown, Sierra Leone",
                       href: null,
                     },
                     {

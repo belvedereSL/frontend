@@ -63,11 +63,11 @@ const partnerTypes = [
   },
   {
     title: "Local Communities",
-    desc: "Local NGOs, Community-based organizations, and training institutions",
+    desc: "Local NGOs, Community-based organisations, and training institutions",
   },
   {
     title: "Market Builders",
-    desc: "Private sector organizations and strategic investors",
+    desc: "Private sector organisations and strategic investors",
   },
 ];
 
@@ -144,7 +144,7 @@ const About = () => {
             >
               For years, Belvedere has combined local expertise with global best
               practices to provide strategic consulting, research, and
-              development solutions that help organizations achieve measurable
+              development solutions that help organisations achieve measurable
               and sustainable results.
             </motion.p>
           </div>
@@ -177,7 +177,7 @@ const About = () => {
                     company, we provide high-quality consultancy, research,
                     project management, and advisory services to governments,
                     development partners, multilateral institutions,
-                    non-governmental organizations, corporations, and private
+                    non-governmental organisations, corporations, and private
                     sector investors across Sierra Leone and the wider West
                     African region.
                   </p>
@@ -223,7 +223,7 @@ const About = () => {
                         Our expertise spans a broad range of sectors including
                         economic development, agriculture and agribusiness,
                         climate resilience, renewable energy, youth employment,
-                        private sector development, organizational capacity
+                        private sector development, organisational capacity
                         building, housing, social protection, and public sector
                         reform.
                       </p>
@@ -240,7 +240,7 @@ const About = () => {
                         institutions and government agencies, including the
                         World Bank, African Development Bank, Islamic
                         Development Bank, European Union, United Nations
-                        Industrial Development Organization (UNIDO), UNICEF, the
+                        Industrial Development Organisation (UNIDO), UNICEF, the
                         World Food Programme (WFP), and the Government of Sierra
                         Leone.
                       </p>
@@ -278,7 +278,7 @@ const About = () => {
                         Our team comprises highly experienced consultants,
                         researchers, development practitioners, and technical
                         specialists with more than 75 years of combined
-                        experience in organizational development, policy
+                        experience in organisational development, policy
                         analysis, strategic planning, project management,
                         monitoring and evaluation, capacity development, and
                         socio-economic research. Our professionals have worked
@@ -303,7 +303,7 @@ const About = () => {
                       </p>
                       <p>
                         Whether supporting institutional reforms, conducting
-                        complex evaluations, strengthening organizational
+                        complex evaluations, strengthening organisational
                         capacity, developing investment strategies, or managing
                         large-scale development projects, we are committed to
                         helping our clients create meaningful and lasting

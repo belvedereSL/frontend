@@ -7,7 +7,7 @@ import { servicesData } from "../Data/servicesData";
 export default function Footer() {
   const nav = [
     {
-      label: "Organization",
+      label: "Organisation",
       links: [
         { l: "About Us", to: "/about" },
         { l: "Services", to: "/services" },
