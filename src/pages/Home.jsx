@@ -103,7 +103,7 @@ const Home = () => {
           >
             <div className="home-content-eyebrow">
               <span className="home-eyebrowLine" />
-              Improving Quality of Lives
+              Improving Quality of Life
             </div>
 
             <div className="home-headline">

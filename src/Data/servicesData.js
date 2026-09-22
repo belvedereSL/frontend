@@ -12,7 +12,7 @@ export const servicesData = [
       "Organisational Assessment and Transformation: We conduct comprehensive institutional and organisational assessments to identify strengths, gaps, risks, and opportunities for improvement, providing practical recommendations for enhanced performance and effectiveness.",
       "Strategic Planning and Policy Development: We facilitate the development of evidence-based strategic plans, policies, and operational frameworks that align organisational priorities with national, sectoral, and global development objectives.",
       "Governance and Leadership Strengthening: We support organisations to strengthen governance structures, decision-making processes, accountability systems, and leadership capacity to improve institutional effectiveness and transparency.",
-      "Capacity Building and Change Management: We design and deliver tailored capacity development programs, leadership coaching, and change management interventions that enable organisations to adapt, innovate, and grow.",
+      "Capacity Building and Change Management: We design and deliver tailored capacity development programmes, leadership coaching, and change management interventions that enable organisations to adapt, innovate, and grow.",
       "Institutional Performance Improvement: We help organisations improve operational efficiency, business processes, performance management systems, and service delivery mechanisms to achieve measurable results.",
       "Monitoring, Evaluation, Learning and Knowledge Management: We establish systems that enable organisations to track performance, measure impact, generate evidence, and promote continuous learning and improvement.",
     ],
@@ -46,19 +46,19 @@ export const servicesData = [
       "Providing the evidence, insights, and learning organisations need to achieve measurable and sustainable results",
     headline: "Turning Data into Insights. Turning Insights into Impact.",
     definition:
-      "Effective decisions require reliable evidence. At Belvedere (SL) Ltd., we provide high-quality research, monitoring, evaluation, and learning services that help governments, development partners, NGOs, and private sector organisations measure results, understand impact, and improve performance. We combine rigorous methodologies, innovative data collection approaches, and deep contextual understanding to generate actionable insights that inform policy, strengthen programs, and support evidence-based decision-making.",
+      "Effective decisions require reliable evidence. At Belvedere (SL) Ltd., we provide high-quality research, monitoring, evaluation, and learning services that help governments, development partners, NGOs, and private sector organisations measure results, understand impact, and improve performance. We combine rigorous methodologies, innovative data collection approaches, and deep contextual understanding to generate actionable insights that inform policy, strengthen programmes, and support evidence-based decision-making.",
     whatWeDo: [
       "Research and Policy Analysis: We conduct social, economic, institutional, and sectoral research to provide evidence that informs policy development, strategic planning, and investment decisions.",
       "Baseline, Midline and Endline Studies: We design and implement comprehensive studies that establish benchmarks, measure progress, and assess the effectiveness of development interventions over time.",
       "Monitoring and Evaluation (M&E): We support organisations in designing and implementing results-based monitoring and evaluation systems that track performance, measure outcomes, and strengthen accountability.",
-      "Impact Assessments: We assess the long-term effects of programs, projects, and policies to determine what works, why it works, and how impact can be scaled and sustained.",
-      "Data Collection and Analytics: Using quantitative and qualitative methods, we collect, analyze, and interpret data to generate meaningful insights for decision-makers and stakeholders.",
-      "Learning, Knowledge Management and Adaptive Programming: We help organisations capture lessons learned, promote continuous improvement, and adapt programs based on evidence and emerging realities.",
+      "Impact Assessments: We assess the long-term effects of programmes, projects, and policies to determine what works, why it works, and how impact can be scaled and sustained.",
+      "Data Collection and Analytics: Using quantitative and qualitative methods, we collect, analyse, and interpret data to generate meaningful insights for decision-makers and stakeholders.",
+      "Learning, Knowledge Management and Adaptive Programming: We help organisations capture lessons learned, promote continuous improvement, and adapt programmes based on evidence and emerging realities.",
       "Performance Measurement and Results Reporting: We develop indicators, results frameworks, dashboards, and reporting systems that help organisations demonstrate progress and communicate impact effectively.",
     ],
     whoWeServe: [
       "Government Ministries, Departments, and Agencies",
-      "Development Partners and Donor-Funded Programs",
+      "Development Partners and Donor-Funded Programmes",
       "International and National NGOs",
       "United Nations Agencies",
       "Research Institutions and Foundations",
@@ -67,7 +67,7 @@ export const servicesData = [
     whyBelvedere:
       "Our team brings extensive experience in designing and managing complex research and evaluation assignments across multiple sectors, including agriculture, youth employment, governance, climate change, private sector development, education, and social protection. We combine local expertise with internationally recognized methodologies to deliver credible, objective, and actionable findings.",
     ourApproach:
-      "Our Approach: We believe that data should do more than measure performance—it should drive learning, improve decision-making, and strengthen development outcomes. Our approach emphasizes quality, participation, innovation, and practical recommendations that enable our clients to make informed choices and maximize impact.",
+      "Our Approach: We believe that data should do more than measure performance—it should drive learning, improve decision-making, and strengthen development outcomes. Our approach emphasizes quality, participation, innovation, and practical recommendations that enable our clients to make informed choices and maximise impact.",
     whatWeDeliver: [
       "Evidence-based insights",
       "Reliable and high-quality data",
@@ -91,19 +91,19 @@ export const servicesData = [
     whatWeDo: [
       "Agricultural Policy and Strategy Development: We support governments and development institutions in designing evidence-based agricultural policies, sector strategies, investment plans, and implementation frameworks that promote sustainable agricultural transformation.",
       "Agribusiness and Value Chain Development: We identify opportunities across agricultural value chains and provide solutions that improve competitiveness, strengthen market linkages, increase value addition, and expand access to local and international markets.",
-      "Food Security and Rural Development: We design and evaluate programs that improve food systems, strengthen rural economies, increase household incomes, and build resilience among farming communities.",
+      "Food Security and Rural Development: We design and evaluate programmes that improve food systems, strengthen rural economies, increase household incomes, and build resilience among farming communities.",
       "Agricultural Investment and Project Development: We assist investors, financial institutions, and development agencies in identifying investment opportunities, conducting feasibility studies, preparing business plans, and structuring bankable agricultural projects.",
       "Farmer Organisation and Cooperative Strengthening: We support farmer-based organisations, cooperatives, and producer groups to improve governance, management, business performance, and market engagement.",
       "Climate-Smart Agriculture: We help stakeholders adopt innovative and climate-resilient agricultural practices that improve productivity while protecting natural resources and adapting to climate change.",
-      "Monitoring, Evaluation and Impact Assessment: We provide research, monitoring, and evaluation services that measure the effectiveness, impact, and sustainability of agricultural programs and investments.",
+      "Monitoring, Evaluation and Impact Assessment: We provide research, monitoring, and evaluation services that measure the effectiveness, impact, and sustainability of agricultural programmes and investments.",
     ],
     whoWeServe: [
       "Government Ministries, Departments, and Agencies",
-      "Development Partners and Donor-Funded Programs",
+      "Development Partners and Donor-Funded Programmes",
       "Agribusiness Companies and Investors",
       "Financial Institutions",
       "Farmer Organisations and Cooperatives",
-      "NGOs and Rural Development Programs",
+      "NGOs and Rural Development Programmes",
     ],
     whyBelvedere:
       "Our team brings decades of experience in agriculture, agribusiness, rural development, policy advisory, research, project management, and capacity building. We combine deep understanding of local agricultural systems with international best practices to deliver practical solutions that generate measurable results. We understand that successful agricultural development requires more than increasing production. It requires stronger value chains, better market access, improved business models, increased investment, and resilient farming systems that create lasting prosperity for rural communities.",
@@ -130,12 +130,12 @@ export const servicesData = [
       "Climate change is one of the greatest challenges facing governments, businesses, and communities today. Rising temperatures, extreme weather events, environmental degradation, and resource constraints are threatening livelihoods, food security, economic growth, and sustainable development. Addressing these challenges requires innovative solutions, strong institutions, and strategic investments that promote resilience and long-term sustainability. At Belvedere (SL) Ltd., we support governments, development partners, private sector organisations, and communities to design and implement climate-smart, environmentally sustainable, and economically viable solutions that strengthen resilience while creating opportunities for inclusive growth.",
     whatWeDo: [
       "Climate Change Policy and Strategy Development: We assist governments and institutions in developing climate policies, adaptation strategies, action plans, and implementation frameworks that align with national priorities and international commitments.",
-      "Climate Resilience and Adaptation: We design and support programs that help communities, businesses, and institutions adapt to climate risks, strengthen resilience, and reduce vulnerability to environmental shocks.",
+      "Climate Resilience and Adaptation: We design and support programmes that help communities, businesses, and institutions adapt to climate risks, strengthen resilience, and reduce vulnerability to environmental shocks.",
       "Renewable Energy and Green Growth: We provide advisory services on renewable energy, clean technologies, energy access, and green economic development initiatives that promote sustainable and low-carbon growth.",
       "Environmental and Social Safeguards: We conduct environmental and social assessments, develop safeguard frameworks, and support compliance with international environmental, social, and governance (ESG) standards.",
       "Climate Finance and Investment Readiness: We help clients identify climate financing opportunities, develop investment proposals, mobilize resources, and access funding from climate and development finance institutions.",
       "Sustainable Agriculture and Natural Resource Management: We support the adoption of climate-smart agricultural practices, sustainable land management, ecosystem restoration, and natural resource conservation initiatives.",
-      "Research, Monitoring and Impact Assessment: We conduct climate vulnerability assessments, environmental studies, program evaluations, and impact assessments that provide evidence for informed decision-making and improved outcomes.",
+      "Research, Monitoring and Impact Assessment: We conduct climate vulnerability assessments, environmental studies, programme evaluations, and impact assessments that provide evidence for informed decision-making and improved outcomes.",
     ],
     whoWeServe: [
       // "Government Entities and Regulatory Framework Bodies",
@@ -144,7 +144,7 @@ export const servicesData = [
       // "Civil Society Groups and Rural High-Risk Communities",
     ],
     whyBelvedere:
-      "Our team combines expertise in climate change, agriculture, renewable energy, environmental management, research, policy development, and institutional strengthening. We understand the unique challenges facing developing economies and provide practical, evidence-based solutions that balance environmental sustainability with economic development. We work closely with our clients to integrate climate considerations into policies, programs, investments, and business strategies, ensuring that development gains are protected and future opportunities are realized.",
+      "Our team combines expertise in climate change, agriculture, renewable energy, environmental management, research, policy development, and institutional strengthening. We understand the unique challenges facing developing economies and provide practical, evidence-based solutions that balance environmental sustainability with economic development. We work closely with our clients to integrate climate considerations into policies, programmes, investments, and business strategies, ensuring that development gains are protected and future opportunities are realized.",
     ourApproach:
       "Belvedere partners with organisations to transform climate challenges into opportunities for resilient growth, sustainable development, and improved quality of life for present and future generations.",
     whatWeDeliver: [
@@ -165,19 +165,19 @@ export const servicesData = [
       "Equipping young people with the skills, opportunities, and pathways needed to succeed in the workforce and beyond",
     headline: "Empowering Young People. Driving Economic Transformation.",
     definition:
-      "Young people are the greatest asset of any nation. Yet across many developing economies, unemployment, underemployment, and skills mismatches continue to limit the potential of millions of youth. Unlocking this potential requires targeted investments in skills development, entrepreneurship, innovation, and employment creation. At Belvedere (SL) Ltd., we work with governments, development partners, educational institutions, private sector organisations, and youth-focused programs to design and implement solutions that equip young people with the skills, opportunities, and support needed to thrive in a rapidly changing economy. Our goal is to help create a skilled, productive, and entrepreneurial workforce that contributes to sustainable economic growth, social inclusion, and national development.",
+      "Young people are the greatest asset of any nation. Yet across many developing economies, unemployment, underemployment, and skills mismatches continue to limit the potential of millions of youth. Unlocking this potential requires targeted investments in skills development, entrepreneurship, innovation, and employment creation. At Belvedere (SL) Ltd., we work with governments, development partners, educational institutions, private sector organisations, and youth-focused programmes to design and implement solutions that equip young people with the skills, opportunities, and support needed to thrive in a rapidly changing economy. Our goal is to help create a skilled, productive, and entrepreneurial workforce that contributes to sustainable economic growth, social inclusion, and national development.",
     whatWeDo: [
-      "Youth Employment and Labour Market Assessments: We conduct labour market studies, skills gap analyses, and employment assessments that identify opportunities, challenges, and emerging trends to inform policy and program design.",
-      "Skills Development and Workforce Readiness: We support the design and implementation of technical, vocational, and employability skills programs that align training with labour market demand and industry needs.",
+      "Youth Employment and Labour Market Assessments: We conduct labour market studies, skills gap analyses, and employment assessments that identify opportunities, challenges, and emerging trends to inform policy and programme design.",
+      "Skills Development and Workforce Readiness: We support the design and implementation of technical, vocational, and employability skills programmes that align training with labour market demand and industry needs.",
       "Entrepreneurship and Enterprise Development: We help young entrepreneurs start, grow, and sustain businesses through business development services, entrepreneurship training, mentoring, and access-to-market initiatives.",
       "TVET and Education System Strengthening: We provide advisory services to strengthen Technical and Vocational Education and Training (TVET) systems, curriculum development, institutional capacity, and workforce development strategies.",
-      "Youth Economic Empowerment Programs: We design and evaluate initiatives that promote job creation, income generation, financial inclusion, and economic participation among young people, particularly women and vulnerable groups.",
-      "Private Sector Engagement and Employment Partnerships: We facilitate partnerships between employers, training institutions, and development programs to improve workforce readiness, apprenticeships, internships, and employment opportunities.",
-      "Monitoring, Evaluation and Impact Assessment: We assess the effectiveness and impact of youth employment and skills development programs, providing evidence to improve outcomes and maximize investments.",
+      "Youth Economic Empowerment Programmes: We design and evaluate initiatives that promote job creation, income generation, financial inclusion, and economic participation among young people, particularly women and vulnerable groups.",
+      "Private Sector Engagement and Employment Partnerships: We facilitate partnerships between employers, training institutions, and development programmes to improve workforce readiness, apprenticeships, internships, and employment opportunities.",
+      "Monitoring, Evaluation and Impact Assessment: We assess the effectiveness and impact of youth employment and skills development programmes, providing evidence to improve outcomes and maximize investments.",
     ],
     whoWeServe: [
       "Government Ministries and Employment Agencies",
-      "Development Partners and Donor-Funded Programs",
+      "Development Partners and Donor-Funded Programmes",
       "Technical and Vocational Training Institutions",
       "Universities and Educational Organisations",
       "NGOs and Civil Society Organisations",
@@ -192,7 +192,7 @@ export const servicesData = [
       "Strengthen skills development and TVET systems",
       "Promote entrepreneurship and enterprise growth",
       "Increase access to employment and economic opportunities",
-      "Align training programs with labour market demand",
+      "Align training programmes with labour market demand",
       "Support inclusive and sustainable economic development",
     ],
     conclusionTagline: "Investing in Youth. Building the Future",
@@ -217,7 +217,7 @@ export const servicesData = [
     ],
     whoWeServe: [
       "Government Ministries and Investment Promotion Agencies",
-      "Development Finance Institutions and Donor Programs",
+      "Development Finance Institutions and Donor Programmes",
       "Private Investors and Investment Funds",
       "Small and Medium-Sized Enterprises (SMEs)",
       "Business Membership Organisations and Chambers of Commerce",
@@ -259,7 +259,7 @@ export const servicesData = [
     whoWeServe: [
       "Government Ministries and Project Execution Units",
       "Development Partners and Multilateral Organisations",
-      "Donor-Funded Programs and Projects",
+      "Donor-Funded Programmes and Projects",
       "NGOs and Civil Society Organisations",
       "Private Sector Companies and Investors",
       "Project Implementation Units (PIUs)",
@@ -288,15 +288,15 @@ export const servicesData = [
     headline:
       "Developing Skills. Strengthening Institutions. Transforming Lives.",
     definition:
-      "Sustainable development depends on people and institutions having the knowledge, skills, and capabilities to perform effectively, adapt to change, and seize emerging opportunities. At Belvedere (SL) Ltd., we design and deliver practical, results-oriented capacity building and training programs that empower individuals, strengthen organisations, and improve development outcomes. We work with governments, development partners, NGOs, private sector organisations, educational institutions, and communities to build technical, managerial, entrepreneurial, and vocational skills that enhance performance, productivity, and long-term sustainability. Our training programs combine international best practices with local realities, ensuring participants gain practical knowledge and hands-on experience that can be immediately applied in their workplaces, businesses, and communities.",
+      "Sustainable development depends on people and institutions having the knowledge, skills, and capabilities to perform effectively, adapt to change, and seize emerging opportunities. At Belvedere (SL) Ltd., we design and deliver practical, results-oriented capacity building and training programmes that empower individuals, strengthen organisations, and improve development outcomes. We work with governments, development partners, NGOs, private sector organisations, educational institutions, and communities to build technical, managerial, entrepreneurial, and vocational skills that enhance performance, productivity, and long-term sustainability. Our training programmes combine international best practices with local realities, ensuring participants gain practical knowledge and hands-on experience that can be immediately applied in their workplaces, businesses, and communities.",
     whatWeDo: [
       "Organisational Capacity Development: We support institutions in strengthening leadership, governance, strategic planning, project management, financial management, monitoring and evaluation, and operational effectiveness.",
-      "Professional and Technical Training: We design and deliver customized training programs across a wide range of development sectors, including agriculture, climate change, project management, entrepreneurship, youth employment, research, and institutional development.",
+      "Professional and Technical Training: We design and deliver customized training programmes across a wide range of development sectors, including agriculture, climate change, project management, entrepreneurship, youth employment, research, and institutional development.",
       "Leadership and Management Development: We equip leaders and managers with the skills required to drive organisational performance, manage teams effectively, lead change, and achieve strategic objectives.",
       "Entrepreneurship and Business Skills Training: We provide practical training in business planning, enterprise management, financial literacy, marketing, value chain development, and investment readiness to support business growth and job creation.",
-      "Monitoring, Evaluation and Results-Based Management Training: We help organisations strengthen their capacity to design, implement, monitor, and evaluate programs while improving learning, accountability, and impact measurement.",
+      "Monitoring, Evaluation and Results-Based Management Training: We help organisations strengthen their capacity to design, implement, monitor, and evaluate programmes while improving learning, accountability, and impact measurement.",
       "Community-Based Skills Development: We support communities with vocational and livelihood skills training that promote self-employment, income generation, and economic empowerment.",
-      "Stabilized Soil Block (SSB) Production and Masonry Training: As part of our commitment to promoting affordable, environmentally sustainable housing and green construction technologies, Belvedere provides specialized training in Stabilized Soil Block (SSB) production and masonry.Our practical training programs equip participants with the technical skills required to: ",
+      "Stabilized Soil Block (SSB) Production and Masonry Training: As part of our commitment to promoting affordable, environmentally sustainable housing and green construction technologies, Belvedere provides specialized training in Stabilized Soil Block (SSB) production and masonry.Our practical training programmes equip participants with the technical skills required to: ",
     ],
     SSB: [
       "Produce high-quality stabilized soil blocks using locally available materials",
@@ -308,7 +308,7 @@ export const servicesData = [
     ],
 
     SSBINFO:
-      "These training programs are particularly valuable for youth, artisans, contractors, vocational training institutions, housing projects, community development programs, and organisations promoting green construction and affordable housing solutions.",
+      "These training programmes are particularly valuable for youth, artisans, contractors, vocational training institutions, housing projects, community development programmes, and organisations promoting green construction and affordable housing solutions.",
     whoWeServe: [
       "Government Ministries and Public Sector Officials",
       "Development Partners and Project Management Teams",

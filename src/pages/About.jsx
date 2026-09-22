@@ -7,7 +7,7 @@ import heroVideo from "../assets/Background-Videos/About.mp4";
 
 const team = [
   { name: "Isata Koroma", role: "Executive Director", img: "" },
-  { name: "Samuel Bangura", role: "Head of Programs", img: "" },
+  { name: "Samuel Bangura", role: "Head of Programmes", img: "" },
   { name: "Mariama Conteh", role: "Community Relations", img: "" },
   { name: "Ibrahim Sesay", role: "Finance & Operations", img: "" },
 ];
@@ -246,7 +246,7 @@ const About = () => {
                       </p>
                       <p>
                         Our extensive experience working with donor-funded
-                        programs enables us to navigate complex development
+                        programmes enables us to navigate complex development
                         environments while maintaining the highest standards of
                         quality, accountability, and results.
                       </p>

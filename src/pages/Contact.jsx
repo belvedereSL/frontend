@@ -32,7 +32,7 @@ const faqs = [
     a: "We are funded through a mix of individual donors, grants, and institutional partnerships. Our annual report includes full financial transparency.",
   },
   {
-    q: "Can organisations partner with you on programs?",
+    q: "Can organisations partner with you on programmes?",
     a: "Absolutely. We actively seek partnerships with organisations whose values align with ours. Reach out to start a conversation.",
   },
 ];
