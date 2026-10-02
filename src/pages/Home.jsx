@@ -29,7 +29,7 @@ const stats = [
     num: 16,
     suffix: "+",
     label: "International & Government Partners",
-    desc: "Participants completing full programs",
+    desc: "Participants completing full programmes",
   },
   {
     num: 6,
