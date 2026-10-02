@@ -2,6 +2,9 @@
 command = "npm run build"
 publish = "dist"
 
+[images]
+remote_images = ["https://images\\.unsplash\\.com/.*"]
+
 [[redirects]]
 from = "/*"
 to = "index.html"

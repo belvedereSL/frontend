@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { servicesData } from "../Data/servicesData";
+import { backgroundImageStyle } from "../lib/backgroundMedia";
 import "./ServicesDetail.css";
 
 import YeriNotesForm from "./YeriNotes";
@@ -156,7 +157,7 @@ const ServicesDetail = () => {
     <div className="detail-page-wrapper">
       <div
         className="detail-hero-section"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={backgroundImageStyle(backgroundImage)}
       >
         <div className="detail-hero-overlay" />
         <div className="detail-hero-content">
