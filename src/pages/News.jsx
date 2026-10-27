@@ -11,14 +11,33 @@ import { useState } from "react";
 import heroVideo from "../assets/Background-Videos/News.mp4";
 import { div } from "framer-motion/client";
 
-const categories = ["All", "Updates", "Stories", "Reports", "Events"];
+const categories = ["All", "Updates","Stories", "Reports", "Events", "Publications"];
 
 const News = () => {
-  const { posts, loading, error } = useNews();
+  const { posts, loading, error } = useNews
+();
   const [filter, setFilter] = useState("All");
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState("");
   const [selectedPost, setSelectedPost] = useState(null);
+
+  // 👉 ADDED 1: Helper to get PDF url from Contentful or local
+  const getPdfUrl = (post) => {
+    // 1. Try Contentful URL first
+    if (post.pdfUrl) return post.pdfUrl;
+    if (post.pdfLink) return post.pdfLink;
+    if (post.file?.fields?.file?.url) return `https:${post.file.fields.file.url}`;
+    if (post.pdfFile?.fields?.file?.url) return `https:${post.pdfFile.fields.file.url}`;
+    if (post.file?.url) return post.file.url;
+
+    // 2. If no Contentful file, try local /docs/ ONLY if fileName exists
+    if (post.fileName && post.fileName !== "") return `/docs/${post.fileName}`;
+
+    // 3. Don't return /docs/ empty - return null
+    return null;
+  };
+
+
 
   const featured = posts.find((p) => p.featured);
   const rest = posts.filter(
@@ -74,15 +93,49 @@ const News = () => {
               className="modal-img"
             />
 
-            <motion.div className="modal-body">
-              <motion.div className="news-cardMeta">
-                {/* CHANGE THIS: Use selectedPost instead of featured */}
-                <span className="news-postCat">{selectedPost.category}</span>
-                <span className="news-postDate">{selectedPost.date}</span>
+            {/* 👉 ADDED 2: Modal now handles Publications with PDF reader */}
+            {selectedPost.category === "Publications" ? (
+              <>
+                <motion.div className="modal-body" style={{ padding: "20px", borderBottom: "1px solid #eee" }}>
+                  <motion.div className="news-cardMeta">
+                    <span className="news-postCat">{selectedPost.category}</span>
+                    <span className="news-postDate">{selectedPost.date}</span>
+                  </motion.div>
+                  <h2 className="modal-h2">{selectedPost.title}</h2>
+                  <p className="modal-p">{selectedPost.body || selectedPost.excerpt}</p>
+                </motion.div>
+                <div style={{ padding: "15px", display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    <a href={getPdfUrl(selectedPost)} download target="_blank" rel="noreferrer" style={{ background: "#0d4a2e", color: "white", padding: "10px 16px", borderRadius: "8px", textDecoration: "none", fontSize: "14px" }}>
+                      📄 Download PDF
+                    </a>
+                    <a
+  href={getPdfUrl(selectedPost) || "#"}
+  target="_blank"
+  rel="noreferrer"
+  onClick={(e) => {
+    if (!getPdfUrl(selectedPost)) {
+      e.preventDefault();
+      alert("No PDF attached to this post. Go to Contentful and upload PDF in pdfFile field.");
+    }
+  }}
+  style={{ border: "1px solid #0d4a2e", color: "#0d4a2e", padding: "10px 16px", borderRadius: "8px", textDecoration: "none", fontSize: "14px" }}>
+  Open in New Tab
+</a>
+                  </div>
+                  <iframe src={getPdfUrl(selectedPost)} style={{ width: "100%", height: "65vh", border: "1px solid #ddd", borderRadius: "8px" }} title="PDF Reader" />
+                </div>
+              </>
+            ) : (
+              <motion.div className="modal-body">
+                <motion.div className="news-cardMeta">
+                  <span className="news-postCat">{selectedPost.category}</span>
+                  <span className="news-postDate">{selectedPost.date}</span>
+                </motion.div>
+                <h2 className="modal-h2">{selectedPost.title}</h2>
+                <p className="modal-p">{selectedPost.body}</p>
               </motion.div>
-              <h2 className="modal-h2">{selectedPost.title}</h2>
-              <p className="modal-p">{selectedPost.body}</p>
-            </motion.div>
+            )}
           </div>
         </motion.div>
       )}
@@ -243,16 +296,38 @@ const News = () => {
                           </div>
                           <h3 className="news-cardTitle">{post.title}</h3>
                           <p className="news-cardExcerpt">{post.excerpt}</p>
-                          <a
-                            href="#"
-                            className="news-readMore"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setSelectedPost(post);
-                            }}
-                          >
-                            Read More →
-                          </a>
+
+                          {/* 👉 ADDED 3: For Publications show Read + Download, else Read More */}
+                          {post.category === "Publications" ? (
+                            <div style={{ display: "flex", gap: "8px", marginTop: "12px" }}>
+                              <button
+                                onClick={() => setSelectedPost(post)}
+                                style={{ flex: 1, background: "#0d4a2e", color: "white", border: "none", padding: "10px", borderRadius: "8px", fontSize: "13px", cursor: "pointer", fontWeight: "600" }}
+                              >
+                                👁️ Read Online
+                              </button>
+                              <a
+                                href={getPdfUrl(post)}
+                                download
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{ flex: 1, border: "1px solid #0d4a2e", color: "#0d4a2e", padding: "10px", borderRadius: "8px", fontSize: "13px", textAlign: "center", textDecoration: "none", fontWeight: "600" }}
+                              >
+                                📄 Download
+                              </a>
+                            </div>
+                          ) : (
+                            <a
+                              href="#"
+                              className="news-readMore"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setSelectedPost(post);
+                              }}
+                            >
+                              Read More →
+                            </a>
+                          )}
                         </div>
                       </article>
                     </FadeUp>
@@ -287,7 +362,7 @@ const News = () => {
                   />
                   <button
                     className="news-newsletterBtn"
-                    onClick={handleSubscribe} // Updated this
+                    onClick={handleSubscribe}
                   >
                     Subscribe
                   </button>

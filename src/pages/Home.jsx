@@ -33,8 +33,8 @@ const stats = [
   },
   {
     num: 6,
-    suffix: "years",
-    label: "Proven Develpment Impact (2019-2025)",
+    suffix: " years",
+    label: "Proven Development Impact (2019-2025)",
     desc: "Local organisations and leaders",
   },
 ];
@@ -130,7 +130,7 @@ const Home = () => {
 
               <div className="home-content-btn">
                 <MotionNavLink to="/services" className="home-content-cta1">
-                  OUR PROGRAMS
+                  OUR PROGRAMMES
                 </MotionNavLink>
                 <MotionNavLink to="/about" className="home-content-cta2">
                   LEARN MORE
