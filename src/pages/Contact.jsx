@@ -158,8 +158,8 @@ const Contact = () => {
                   {[
                     {
                       label: "Email",
-                      val: "info@belvedere.com",
-                      href: "mailto:info@belvedere.com",
+                      val: "info@belvederesl.com",
+                      href: "mailto:info@belvederesl.com",
                     },
                     {
                       label: "Phone",
@@ -173,7 +173,7 @@ const Contact = () => {
                     },
                     {
                       label: "Office Hours",
-                      val: "Mon – Fri, 8am – 5pm (GMT)",
+                      val: "Monday – Friday, 8am – 5pm (GMT)",
                       href: null,
                     },
                   ].map((d) => (

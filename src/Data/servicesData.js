@@ -65,7 +65,7 @@ export const servicesData = [
       "Private Sector Organisations and Investors",
     ],
     whyBelvedere:
-      "Our team brings extensive experience in designing and managing complex research and evaluation assignments across multiple sectors, including agriculture, youth employment, governance, climate change, private sector development, education, and social protection. We combine local expertise with internationally recognized methodologies to deliver credible, objective, and actionable findings.",
+      "Our team brings extensive experience in designing and managing complex research and evaluation assignments across multiple sectors, including agriculture, youth employment, governance, climate change, private sector development, education, and social protection. We combine local expertise with internationally recognised methodologies to deliver credible, objective, and actionable findings.",
     ourApproach:
       "Our Approach: We believe that data should do more than measure performance—it should drive learning, improve decision-making, and strengthen development outcomes. Our approach emphasizes quality, participation, innovation, and practical recommendations that enable our clients to make informed choices and maximise impact.",
     whatWeDeliver: [
@@ -173,7 +173,7 @@ export const servicesData = [
       "TVET and Education System Strengthening: We provide advisory services to strengthen Technical and Vocational Education and Training (TVET) systems, curriculum development, institutional capacity, and workforce development strategies.",
       "Youth Economic Empowerment Programmes: We design and evaluate initiatives that promote job creation, income generation, financial inclusion, and economic participation among young people, particularly women and vulnerable groups.",
       "Private Sector Engagement and Employment Partnerships: We facilitate partnerships between employers, training institutions, and development programmes to improve workforce readiness, apprenticeships, internships, and employment opportunities.",
-      "Monitoring, Evaluation and Impact Assessment: We assess the effectiveness and impact of youth employment and skills development programmes, providing evidence to improve outcomes and maximize investments.",
+      "Monitoring, Evaluation and Impact Assessment: We assess the effectiveness and impact of youth employment and skills development programmes, providing evidence to improve outcomes and maximise investments.",
     ],
     whoWeServe: [
       "Government Ministries and Employment Agencies",
@@ -291,7 +291,7 @@ export const servicesData = [
       "Sustainable development depends on people and institutions having the knowledge, skills, and capabilities to perform effectively, adapt to change, and seize emerging opportunities. At Belvedere (SL) Ltd., we design and deliver practical, results-oriented capacity building and training programmes that empower individuals, strengthen organisations, and improve development outcomes. We work with governments, development partners, NGOs, private sector organisations, educational institutions, and communities to build technical, managerial, entrepreneurial, and vocational skills that enhance performance, productivity, and long-term sustainability. Our training programmes combine international best practices with local realities, ensuring participants gain practical knowledge and hands-on experience that can be immediately applied in their workplaces, businesses, and communities.",
     whatWeDo: [
       "Organisational Capacity Development: We support institutions in strengthening leadership, governance, strategic planning, project management, financial management, monitoring and evaluation, and operational effectiveness.",
-      "Professional and Technical Training: We design and deliver customized training programmes across a wide range of development sectors, including agriculture, climate change, project management, entrepreneurship, youth employment, research, and institutional development.",
+      "Professional and Technical Training: We design and deliver customised training programmes across a wide range of development sectors, including agriculture, climate change, project management, entrepreneurship, youth employment, research, and institutional development.",
       "Leadership and Management Development: We equip leaders and managers with the skills required to drive organisational performance, manage teams effectively, lead change, and achieve strategic objectives.",
       "Entrepreneurship and Business Skills Training: We provide practical training in business planning, enterprise management, financial literacy, marketing, value chain development, and investment readiness to support business growth and job creation.",
       "Monitoring, Evaluation and Results-Based Management Training: We help organisations strengthen their capacity to design, implement, monitor, and evaluate programmes while improving learning, accountability, and impact measurement.",
