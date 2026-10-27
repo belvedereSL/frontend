@@ -93,7 +93,7 @@ const About = () => {
           loop
           playsInline
           onCanPlay={() => setIsVideoReady(true)}
-          poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60"
+          poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>

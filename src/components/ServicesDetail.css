@@ -16,8 +16,21 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: var(--detail-hero-background-original);
   margin-bottom: 60px;
   box-sizing: border-box;
+}
+
+@supports (background-image: image-set(url("") 1x)) {
+  .detail-hero-section {
+    background-image: var(--detail-hero-background-desktop);
+  }
+
+  @media (max-width: 600px) {
+    .detail-hero-section {
+      background-image: var(--detail-hero-background-mobile);
+    }
+  }
 }
 
 .detail-hero-overlay {
