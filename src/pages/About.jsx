@@ -92,6 +92,7 @@ const About = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           onCanPlay={() => setIsVideoReady(true)}
           poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
         >
