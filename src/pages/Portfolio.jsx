@@ -1,9 +1,11 @@
+import OptimizedImage from "../components/OptimizedImage";
+import LazyVideo from "../components/LazyVideo";
 import React, { useState, useEffect } from "react";
 import "./portfolio.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp } from "../components/Animate";
 import { Link } from "react-router-dom";
-import client from "../lib/contentful";
+import { loadEntries } from "../lib/contentCache";
 import heroVideo from "../assets/Background-Videos/Video 3.mp4";
 
 // Clean, aligned data mapper function
@@ -34,12 +36,7 @@ export function usePortfolio() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    client
-      .getEntries({
-        content_type: "portfolioProject",
-        order: "-fields.year",
-        limit: 50,
-      })
+    loadEntries("portfolioProject")
       .then((res) => {
         setProjects(res.items.map(mapProject));
         setLoading(false);
@@ -227,16 +224,14 @@ const Portfolio = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <video
+        <LazyVideo
           className="video-bg"
           autoPlay
           muted
           loop
           playsInline
           poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+         src={heroVideo} />
 
         <div className="port-overlay" />
         <motion.div className="content">
@@ -421,7 +416,7 @@ const Portfolio = () => {
                     {/* Left Column: Renders image side if it exists in Contentful */}
                     {p.img && (
                       <div className="card-node-image-side">
-                        <img
+                        <OptimizedImage
                           src={p.img}
                           alt={p.assignment}
                           className="card-side-img"

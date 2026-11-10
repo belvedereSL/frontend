@@ -1,3 +1,4 @@
+import LazyVideo from "../components/LazyVideo";
 import React from "react";
 import "./contact.css";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -83,16 +84,14 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <video
+        <LazyVideo
           className="video-bg"
           autoPlay
           muted
           loop
           playsInline
           poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+         src={heroVideo} />
 
         <div className="contact-overlay" />
         <motion.div className="content">

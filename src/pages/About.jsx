@@ -1,9 +1,10 @@
+import LazyVideo from "../components/LazyVideo";
 import React, { useState } from "react";
 import "./About.css";
 import "../App.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, SlideIn } from "../components/Animate";
-import heroVideo from "../assets/Background-Videos/About.mp4";
+const heroVideo = "/videos/about.mp4";
 
 const team = [
   { name: "Isata Koroma", role: "Executive Director", img: "" },
@@ -74,7 +75,7 @@ const partnerTypes = [
 const About = () => {
   const [showFullStory, setShowFullStory] = useState(false);
   // Track when video is fully buffered and ready to play without a hitch
-  const [isVideoReady, setIsVideoReady] = useState(false);
+  const isVideoReady = true;
 
   return (
     <>
@@ -86,18 +87,15 @@ const About = () => {
         animate={{ opacity: isVideoReady ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <video
+        <LazyVideo
           className="video-bg"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          onCanPlay={() => setIsVideoReady(true)}
-          poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+          poster="/videos/about-poster.webp"
+         src={heroVideo} />
 
         <div className="about-overlay" />
         <motion.div className="content">

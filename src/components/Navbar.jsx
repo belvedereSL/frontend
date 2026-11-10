@@ -1,3 +1,4 @@
+import { prefetchRoute } from "../lib/prefetchRoute";
 import React, { useState, useEffect, useRef } from "react";
 import "../App.css";
 import logo from "../assets/Logo/logo.png";
@@ -67,6 +68,8 @@ const Navbar = () => {
               <li key={item.path}>
                 <Link
                   to={item.path}
+                  onMouseEnter={() => prefetchRoute(item.path)}
+                  onFocus={() => prefetchRoute(item.path)}
                   className={
                     pathname === item.path ? "nav-link active" : "nav-link"
                   }
@@ -78,7 +81,7 @@ const Navbar = () => {
           </ul>
 
           <div className="cta-btn">
-            <NavLink to="/contact" className="cta">
+            <NavLink to="/contact" onMouseEnter={() => prefetchRoute("/contact")} onFocus={() => prefetchRoute("/contact")} className="cta">
               Contact Us
             </NavLink>
           </div>
@@ -127,6 +130,8 @@ const Navbar = () => {
                 {/* 4. Added onClick to close menu when a mobile link is tapped */}
                 <NavLink
                   to={path}
+                  onMouseEnter={() => prefetchRoute(path)}
+                  onFocus={() => prefetchRoute(path)}
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     `nav-mobileLink ${isActive ? "nav-mobileLinkActive" : ""}`
@@ -139,7 +144,7 @@ const Navbar = () => {
             <div className="nav-mobilecta-btn">
               {/* 5. Added onClick here as well */}
               <NavLink
-                to="/contact"
+                to="/contact" onMouseEnter={() => prefetchRoute("/contact")} onFocus={() => prefetchRoute("/contact")}
                 onClick={() => setMenuOpen(false)}
                 className="nav-mobilecta"
               >

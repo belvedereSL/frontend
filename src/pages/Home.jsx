@@ -1,3 +1,4 @@
+import LazyVideo from "../components/LazyVideo";
 import React from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
@@ -81,7 +82,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <video
+          <LazyVideo
             className="home-video-bg"
             autoPlay
             muted
@@ -89,9 +90,7 @@ const Home = () => {
             playsInline
             preload = "none"
             poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
+           src={heroVideo} />
 
           <div className="home-overlay" />
 

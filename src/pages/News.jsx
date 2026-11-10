@@ -1,3 +1,5 @@
+import OptimizedImage from "../components/OptimizedImage";
+import LazyVideo from "../components/LazyVideo";
 import React from "react";
 import "./News.css";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -87,7 +89,7 @@ const News = () => {
               ✕
             </button>
 
-            <img
+            <OptimizedImage
               src={selectedPost.img}
               alt={selectedPost.title}
               className="modal-img"
@@ -147,16 +149,14 @@ const News = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <video
+        <LazyVideo
           className="video-bg"
           autoPlay
           muted
           loop
           playsInline
           poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+         src={heroVideo} />
         <div className="overlay" />
         {/* {Content} */}
         <motion.div className="content">
@@ -229,7 +229,7 @@ const News = () => {
                 <FadeUp>
                   <div className="news-featured">
                     <div className="news-featuredImg">
-                      <img src={featured.img} alt={featured.title} />
+                      <OptimizedImage src={featured.img} alt={featured.title} />
                       <span className="news-featuredBadge">Featured</span>
                     </div>
                     <div className="news-featuredContent">
@@ -285,7 +285,7 @@ const News = () => {
                     <FadeUp key={post.id} delay={i * 0.07}>
                       <article className="news-card">
                         <div className="news-cardImg">
-                          <img src={post.img} alt={post.title} />
+                          <OptimizedImage src={post.img} alt={post.title} />
                         </div>
                         <div className="news-cardBody">
                           <div className="news-cardMeta">

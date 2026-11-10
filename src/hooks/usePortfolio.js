@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import client from "../lib/contentful";
+import { loadEntries } from "../lib/contentCache";
 
 function mapProject(entry) {
   const f = entry.fields;
@@ -24,12 +24,7 @@ export function usePortfolio() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    client
-      .getEntries({
-        content_type: "portfolioProject",
-        order: "-fields.year",
-        limit: 50,
-      })
+    loadEntries("portfolioProject")
       .then((res) => {
         setProjects(res.items.map(mapProject));
         setLoading(false);

@@ -10,7 +10,7 @@ export default function ScrollToHashElement() {
 
       // Function to handle the actual scrolling routine
       const scrollToElement = () => {
-        const element = document.getElementById(id);
+        const element = document.querySelector(`[data-route-active="true"] [id="${CSS.escape(id)}"]`);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
           return true; // Successfully scrolled!

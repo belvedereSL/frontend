@@ -1,3 +1,4 @@
+import LazyVideo from "../components/LazyVideo";
 import React from "react";
 import "./Services.css";
 import { Link } from "react-router-dom";
@@ -38,16 +39,14 @@ const Services = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <video
+        <LazyVideo
           className="video-bg"
           autoPlay
           muted
           loop
           playsInline
           poster="https://images.unsplash.com/photo-1595872234935-758c5bfc1f6e?w=1600&q=60&auto=format"
-        >
-          <source src={heroVideo2} type="video/mp4" />
-        </video>
+         src={heroVideo2} />
 
         <div className="service-overlay" />
         <motion.div className="content">
