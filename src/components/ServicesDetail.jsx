@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import OptimizedImage from "./OptimizedImage";
+import { useRouteActive } from "../lib/routeActivity";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { servicesData } from "../Data/servicesData";
 import { backgroundImageStyle } from "../lib/backgroundMedia";
@@ -53,8 +55,6 @@ import Climate2 from "../assets/Services/Climate 2.jpeg";
 import Climate3 from "../assets/Services/Climate 3.jpeg";
 
 const serviceHeroImages = {
-  "yeri-notes":
-    "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600&auto=format&fit=crop",
   "project-management": ProjectM1,
   "agriculture-agribusiness": Agribiz1,
   "capacity-building": Capacity1,
@@ -67,8 +67,6 @@ const serviceHeroImages = {
 };
 
 const serviceImages1 = {
-  "yeri-notes":
-    "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=1600&auto=format&fit=crop",
 
   "agriculture-agribusiness": Agribiz2,
   "project-management": ProjectM2,
@@ -82,8 +80,6 @@ const serviceImages1 = {
 };
 
 const serviceImages2 = {
-  "yeri-notes":
-    "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1600&auto=format&fit=crop",
 
   "agriculture-agribusiness": Agribiz3,
   "project-management": ProjectM3,
@@ -112,8 +108,9 @@ const ServicesDetail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Freeze background scrolling when modal is active, restore on close or unmount
+  const routeActive = useRouteActive();
   useEffect(() => {
-    if (isModalOpen) {
+    if (routeActive && isModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -121,7 +118,7 @@ const ServicesDetail = () => {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, routeActive]);
 
   if (!service) {
     return (
@@ -188,7 +185,7 @@ const ServicesDetail = () => {
         <div className="detail-layout-split">
           <main className="detail-primary-column">
             
-              <img src={Logo} alt="" className="yerinotes-logo" />
+              <OptimizedImage src={Logo} alt="" className="yerinotes-logo" />
             
 
             <section className="detail-content-section">
@@ -234,14 +231,14 @@ const ServicesDetail = () => {
               )}
             </section>
             <div className="img">
-              <img src={Image3} alt="" />
+              <OptimizedImage src={Image3} alt="" />
             </div>
           </main>
 
           <aside className="detail-sidebar-column">
             <div className="sidebar-sticky-panel">
               <div className="img">
-                <img src={Image1} alt="" />
+                <OptimizedImage src={Image1} alt="" />
               </div>
               <div className="sidebar-widget box-background">
                 <h4 className="widget-matrix-title">Who We Serve</h4>
@@ -262,7 +259,7 @@ const ServicesDetail = () => {
                 <p className="widget-advantage-desc">{service.whyBelvedere}</p>
               </div>
               <div className="img">
-                <img src={Image2} alt="" />
+                <OptimizedImage src={Image2} alt="" />
               </div>
             </div>
           </aside>

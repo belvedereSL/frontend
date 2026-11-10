@@ -1,25 +1,24 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy } from "react";
+import KeepAliveRoutes from "./components/KeepAliveRoutes";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Service from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import News from "./pages/News";
-import Contact from "./pages/Contact";
+const About = lazy(() => import("./pages/About"));
+const Service = lazy(() => import("./pages/Services"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const News = lazy(() => import("./pages/News"));
+const Contact = lazy(() => import("./pages/Contact"));
 import Navbar from "./components/Navbar";
-import { NavLink, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import ScrollToHashElement from "./components/ScrollToHashElement";
-import ServicesDetail from "./components/ServicesDetail";
-import { servicesData } from "./Data/servicesData";
+const ServicesDetail = lazy(() => import("./components/ServicesDetail"));
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <ScrollToHashElement />
-      <Routes>
+      <KeepAliveRoutes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
@@ -28,7 +27,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
-      </Routes>
+      </KeepAliveRoutes>
       <Footer />
     </BrowserRouter>
   );

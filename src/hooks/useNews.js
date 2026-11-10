@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import client from "../lib/contentful";
+import { loadEntries } from "../lib/contentCache";
 import closingPdf from "../assets/docs/Closing_The_Technology_Gaps.pdf";
 import womenPdf from "../assets/docs/Improving_Women_Access_to_Finance_in_the_Rice_Post_Production_Value_Chain_Final-Signed.pdf";
 
@@ -49,12 +49,7 @@ export function useNews() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    client
-      .getEntries({
-        content_type: "newsPost",
-        order: "-fields.date",
-        limit: 50,
-      })
+    loadEntries("newsPost")
       .then((res) => {
         setPosts(res.items.map(mapPost));
         setLoading(false);
