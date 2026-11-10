@@ -35,14 +35,12 @@ import Private3 from "../assets/Services/Private-1.jpeg";
 // {YeriNotes}
 import YeriNotes1 from "../assets/Services/YeriNotes 1.jpg";
 import YeriNotes2 from "../assets/Services/YeriNotes 3.jpg";
-import YeriNotes3 from "../assets/Services/YeriNotes 2.jpg";
 import Logo from "../assets/Logo/YeriNotes logo 2025.jpg";
 
 // {Strategy}
 import Strategic1 from "../assets/Services/Strategic-1.avif";
 import Strategic2 from "../assets/Services/Strategic-2.jpg";
 import Strategic3 from "../assets/Services/Strategic-3.jpg";
-import Strategic4 from "../assets/Services/Strategy-4.jpg";
 
 // {Research}
 import Research1 from "../assets/Services/Research 1.png";
@@ -86,18 +84,9 @@ const serviceImages2 = {
   "capacity-building": Capacity3,
   "youth-employment": Youth3,
   "private-sector": Private3,
-  "yeri-notes": YeriNotes3,
   "strategic-advisory": Strategic3,
   "climate-change": Climate3,
   "research-evaluation": Research3,
-};
-
-const serviceImages3 = {
-  "strategic-advisory": Strategic4,
-};
-
-const yeriNotesLogo = {
-  "yeri-notes": Logo,
 };
 
 const ServicesDetail = () => {
@@ -137,25 +126,9 @@ const ServicesDetail = () => {
 
   const isYeriNotes = service.id === "yeri-notes";
 
-  const backgroundImage =
-    serviceHeroImages[id] ||
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600";
-  const Image1 =
-    serviceImages1[id] ||
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600";
-  const Image2 =
-    serviceImages2[id] ||
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600";
-  const Image3 = id === "strategic-advisory" ? serviceImages3[id] : null;
-
-  const Logo = id === "yeri-notes" ? yeriNotesLogo[id] : null;
-
   return (
     <div className="detail-page-wrapper">
-      <div
-        className="detail-hero-section"
-        style={backgroundImageStyle(backgroundImage)}
-      >
+      <div className="detail-hero-section" style={backgroundImageStyle(serviceHeroImages[id])}>
         <div className="detail-hero-overlay" />
         <div className="detail-hero-content">
           <Link to="/services" className="detail-back-navigation">
@@ -184,9 +157,9 @@ const ServicesDetail = () => {
       <div className="detail-premium-container">
         <div className="detail-layout-split">
           <main className="detail-primary-column">
-            
-              <OptimizedImage src={Logo} alt="" className="yerinotes-logo" />
-            
+            {isYeriNotes && (
+              <OptimizedImage src={Logo} alt="YeriNotes" className="yerinotes-logo" />
+            )}
 
             <section className="detail-content-section">
               <h2 className="detail-section-headline">{service.headline}</h2>
@@ -230,15 +203,15 @@ const ServicesDetail = () => {
                 <p className="widget-advantage-desc">{service.SSBINFO}</p>
               )}
             </section>
-            <div className="img">
-              <OptimizedImage src={Image3} alt="" />
-            </div>
           </main>
 
           <aside className="detail-sidebar-column">
             <div className="sidebar-sticky-panel">
               <div className="img">
-                <OptimizedImage src={Image1} alt="" />
+                <OptimizedImage
+                  src={serviceImages1[id]}
+                  alt={isYeriNotes ? "YeriNotes conference" : `${service.title} service`}
+                />
               </div>
               <div className="sidebar-widget box-background">
                 <h4 className="widget-matrix-title">Who We Serve</h4>
@@ -258,9 +231,11 @@ const ServicesDetail = () => {
                 </h4>
                 <p className="widget-advantage-desc">{service.whyBelvedere}</p>
               </div>
-              <div className="img">
-                <OptimizedImage src={Image2} alt="" />
-              </div>
+              {!isYeriNotes && (
+                <div className="img">
+                  <OptimizedImage src={serviceImages2[id]} alt={`${service.title} service`} />
+                </div>
+              )}
             </div>
           </aside>
         </div>
